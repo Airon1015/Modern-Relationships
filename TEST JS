@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Guided Exercise #7 </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf=8" />
+	<meta name="description" content="Exe 7" />
+	<meta name="keyword" content="HTML,CSS,Javascript" />
+	<meta name="author" content="AA. Quetulio"  />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+h1 {text-align: center}
+form {width: 50%; margin: 0 auto; padding: 20px}
+fieldset {padding: 10px 30px;}
+
+legend {background: gray; padding: 5px 10px; margin-bottom: 20px;}
+label, fieldset {display:block; margin-bottom: 10px;}
+input[type=number]{
+    width: 50px;
+	text-align: right;
+} 
+</style>
+<script>
+	let tbill = 0.00;
+	let amount1 = 0.00;
+	let amount2 = 0.00;
+	let amount3 = 0.00;
+	
+	var addBill1 = function()
+		{ 
+			let redtext = " ";
+			document.getElementById("addBill").innerHTML = redtext;
+		}
+	var addBill2 = function()
+		{ 
+			let redtext = "[plus 7/11 Fee of Php 40.00] ";
+			document.getElementById("addBill").innerHTML = redtext;
+		}
+	var totalall = function(amount1,amount2,amount3)
+		{
+			tbill = amount1 + amount2 + amount3;
+			document.getElementById("tbill").innerHTML = tbill;
+		}
+	var item1 = function () 
+	{ 
+		amount1 = 0.00;
+		let itemno1 = document.getElementById("itemno1").value;
+		amount1 = itemno1 * 500.00;
+		document.getElementById("amount1").innerHTML = amount1;
+		totalall(amount1,amount2,amount3);
+	}
+	var item2 = function ()
+	{ 
+		amount2 = 0.00;
+		let itemno2 = document.getElementById("itemno2").value;
+		amount2 = itemno2 * 750.00;
+		document.getElementById("amount2").innerHTML = amount2;
+		totalall(amount1,amount2,amount3);
+	}
+	var item3 = function ()
+	{ 
+		amount3 = 0.00;
+		let itemno3 = document.getElementById("itemno3").value;
+		amount3 = itemno3 * 1000.00;
+		document.getElementById("amount3").innerHTML = amount3;
+		totalall(amount1,amount2,amount3);
+	}
+</script>
+</head>
+<body>
+	<h1> Welcome to my Online Shop </h1>
+	<form class="w3-green" name="shop" onsubmit="return confirm ('Are you really sure you want to submit?')" onreset="return confirm ('Are you really sure you want to reset?')">
+		<fieldset class="w3-card-4 w3-teal">
+			<legend class="w3-card4 w3-white"> Delivery Details </legend>
+			<label> Please Enter Full Name 
+				<input class="w3-input w3-border w3-hover-green" type="text" name = "fname" />
+			</label> 
+			<label> Please Enter Delivery Address 
+				<input class="w3-input w3-border w3-hover-green" type="text" name = "add" />
+			</label>
+			<label> Please Select Mode of Payment 
+				<input class="w3-radio"  type="radio" name = "mode" onclick="addBill1()"/> COD
+				<input class="w3-radio" type="radio" name = "mode" onclick="addBill2()"/> Thru 7/11 [+Php 40.00 on Total Bill]
+			</label>
+		</fieldset>
+		<fieldset class="w3-card-4 w3-blue">
+			<legend class="w3-card4 w3-white"> Please indicate Quantity per Item </legend>
+			<label> Basic Set Php 500.00
+				<input class="w3-border w3-hover-green" type="number" id= "itemno1" size="3" min="0" onclick="item1()"/> Amount: Php 
+				<output id="amount1">0.00</output>
+			</label> 
+			<label> Intermediate Set Php 750.00
+				<input class="w3-border w3-hover-green" type="number" id= "itemno2" size="3" min="0" onclick="item2()"/> Amount: Php 
+				<output id="amount2">0.00</output>
+			</label>
+			<label> Advanced Set Php 1000.00
+				<input class="w3-border w3-hover-green" type="number" id= "itemno3" size="3" min="0" onclick="item3()"/> Amount: Php 
+				<output id="amount3">0.00</output>
+			</label>
+			<!-- the following will be used to display purchase information -->
+			<label> Total Bill: Php  
+				<output id="tbill">0.00</output>
+				<output style="color:red" id="addBill"> </output>
+			</label>
+		</fieldset>
+		<input class="w3-btn w3-teal w3-border" type="submit" value="Place in Cart" onclick=" "/>
+		<input class="w3-btn w3-teal w3-border" type="reset"  value="Clear" />
+	</form>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Trivia/Quiz </title>
+	<meta charset="utf=8" />
+	<meta name="description" content="Project" />
+	<meta name="keyword" content="HTML, CSS, Javascript" />
+	<meta name="author" content="AA. Quetulio"  />
+	<link rel="stylesheet" href="../CSS/project.css">
+	
+	<script type="text/javascript" src="../JS/javascript.js"></script>
+</head>
+<body>
+
+<div id="leftcolumn"></div>
+
+<div id="navbar">
+	<div id="title">Modern Relationships</div>
+	<div class="navbarbutton" id="H1"><a href="HOMEPAGE.html">Home</a></div>
+	<div class="navbarbutton" id="H2"><a href="Friends_page1.html">Friendships</a></div>
+	<div class="navbarbutton" id="H3"><a href="Family_page1.html">Family</a></div>
+	<div class="navbarbutton" id="H4"><a href="Lover_page1.html">Lovers</a></div>
+</div>
+<div id="Aform">
+	<form onsubmit="input(); return false;">
+		<fieldset>
+			<p> Dunbar's Number </p>
+			<p> 
+			<div  id="Dpic">
+				<img src="../Images/Dunbar.jpg"> 
+			</div>
+			<br>
+			<br>
+			<br>
+			This number is the theoretical number of relationships of different levels of investment one can have.
+			Tribe denotes that you know of them and they know of you. Clan denotes the group that you can classify as being a comrade with. example: Mg, Rb, K, Li, Sr , etc.
+			Super Family denotes the group that you could call family example: close friendships, family, etc. Close Friends denotes a very close bond, one often forged 
+			through years or through a big event. example: Lovers, Lifelong Friends, etc. Here is a link to the wiki explaining it in a more scientific manner.
+			</p>
+				<a href="https://en.wikipedia.org/wiki/Dunbar%27s_number">https://en.wikipedia.org/wiki/Dunbar%27s_number</a>
+		</fieldset>
+		<fieldset>
+			Tribesmen Count? 	<br><input type="text" id="it"> <br>
+			Clansmen Count?   	<br><input type="text" id="ic"> <br>
+			Superfamily Count?  <br><input type="text" id="isf"> <br>
+			Close Friend Count? <br><input type="text" id="ics"> <br><br>
+			<input type="submit" value="Submit">
+			<button onclick="location.reload()"> Clear </button>
+		</fieldset>
+		<fieldset>
+			<p>Result</p>
+			<p>Tribe: <span id="tribe">0</span>% to the maximum of 150</p>
+			<p>Clan: <span id="clan">0</span>% to the maximum of 50</p>
+			<p>Super Family: <span id="superfamily">0</span>% to the maximum of 15</p>
+			<p>Close Friends: <span id="closefriends">0</span>% to the maximum of 5</p>
+		</fieldset>
+	</form>
+</div>	
+<div id="rightcolumn"></div>
+</body>
+</html>
